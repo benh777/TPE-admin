@@ -24,7 +24,7 @@ infoUsers()
 {
 	var1=$(date +'%d');
 	dat3j=$((var1 - 3));
-	nbrUser=$(cut -d ' ' -f 2 /var/log/auth.log | grep ^dat3j | grep "new user" /var/log/auth.log | cut -d ' ' -f 8|cut -c 6-|cut -d , -f 1|uniq);
+	nbrUser=$(cut -d ' ' -f 2 /var/log/auth.log | grep ^dat3j | grep "new user" /var/log/auth.log | cut -d ' ' -f 8|cut -c 6-|cut -d    ,       -f 1|uniq);
 	echo $nbrUser\n;
 }
 
@@ -43,7 +43,7 @@ archivage()
 
 gestionTache()
 {
-	top;
+	vmstat;
 }
 while (test $choix != 5)
 	do
